@@ -1,0 +1,22 @@
+.about {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.image {
+  height: 520px;
+  width: auto;
+  object-fit: contain;
+  object-position: center;
+}

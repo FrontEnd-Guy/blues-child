@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Header from './components/Header/Header';
+import Hero from './components/Hero/Hero';
+import Gigs from './components/Gigs/Gigs';
+import Footer from './components/Footer/Footer';
+import About from './components/About/About';
+import Gallery from './components/Gallery/Gallery';
+
+import { useModal } from './context/ModalContext';
+
+import {photos} from './utils/constants';
+import {videos} from './utils/constants';
+import PopupModal from './components/PopupModal';
 
 function App() {
+  const { isOpen } = useModal();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Hero />
+      <About />
+      <Gigs />
+      <Gallery photos={photos} videos={videos}/>
+      <Footer />
+      {isOpen && (<PopupModal/>)}
     </div>
   );
 }

@@ -1,0 +1,57 @@
+.gigItem {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #ccc;
+  padding: 20px;
+}
+
+.gigItem:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, .125);
+}
+
+.gigDate,
+.gigDetails {
+  margin-right: 15px;
+  align-self: center;
+}
+
+.gigDate {
+  min-width: 70px;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: normal;
+}
+
+.day {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+.date {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.month {
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+.gigTitle {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.gigLocation {
+  margin: 5px 0;
+}
+
+/* Add responsiveness and other styles as needed */
