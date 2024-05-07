@@ -54,11 +54,13 @@ h2 {
 }
 
 h3 {
+  font-family: "Fugaz One", sans-serif;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 1.6;
+  font-style: normal;
   margin: 0;
   padding: 0;
+  font-size: 30px;
+  color: white;
 }
 
 p {

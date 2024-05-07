@@ -14,7 +14,7 @@ const About = () => {
           deliver dynamic performances that resonate from intimate clubs to festival stages, leaving
           a lasting impression.
         </p>
-        <h3>Meet the Band:</h3>
+        <p>Band members are:</p>
         <ul>
           <li>Jock Adams - Lead Vocals and Lead Guitar</li>
           <li>Olivia Christensen - Lead Vocals</li>

@@ -11,7 +11,7 @@ import { useModal } from './context/ModalContext';
 
 import {photos} from './utils/constants';
 import {videos} from './utils/constants';
-import PopupModal from './components/PopupModal';
+import PopupModal from './components/PopupModal/PopupModal';
 
 function App() {
   const { isOpen } = useModal();

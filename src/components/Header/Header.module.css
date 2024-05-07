@@ -41,5 +41,6 @@
   font-size: 1.7rem;
   font-family: "Fugaz One", sans-serif;
   font-weight: 400;
+  white-space: nowrap;
 }
 

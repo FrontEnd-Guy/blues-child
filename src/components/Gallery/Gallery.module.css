@@ -27,16 +27,16 @@
 
 .photos, .videos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust the minmax values based on your preferred item width */
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 20px;
   padding: 20px;
   align-items: stretch; 
 }
 
 .photo, .video {
-  width: 100%; /* Ensures each item fills the grid area */
-  height: 300px;
-  overflow: hidden; /* Hides parts of the image/video that exceed the item size */
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
   position: relative;
   display: flex;
   justify-content: center;
