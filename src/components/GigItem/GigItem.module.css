@@ -25,6 +25,7 @@
   justify-content: center;
   align-items: center;
   line-height: normal;
+  white-space: nowrap;
 }
 
 .day {
@@ -59,8 +60,12 @@
     padding: 10px;
   }
 
-  .day, .date, .month {
+  .day, .month {
     font-size: 1em;
+  }
+
+  .date {
+    font-size: 2rem;
   }
 
   .gigDetails {
@@ -73,7 +78,11 @@
 }
 
 @media (max-width: 480px) {
-  .day, .date, .month {
+  .day, .month {
     font-size: 0.9em;
+  }
+
+  .date {
+    font-size: 1.5rem;
   }
 }

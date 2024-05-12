@@ -12,16 +12,18 @@ const Hero = () => {
 
   return (
     <section id="hero" className={styles.hero} aria-labelledby="hero-title" role="banner">
-      <video className={styles.video} autoPlay muted loop aria-hidden="true">
+      <video className={styles.video} autoPlay muted loop playsInline aria-hidden="true">
         <source src={video} type="video/mp4" />
       </video>
-      <h1 id="hero-title" className={styles.title}>
-        Blues Child Rocks <br />
-        the Spirit of the South
-      </h1>
-      <button className={styles.button} aria-label="See gig dates" onClick={handleScrollToEvents}>
-        See Gig Dates
-      </button>
+      <div className={styles.contentOverlay}>
+        <h1 id="hero-title" className={styles.title}>
+          Blues Child Rocks <br />
+          the Spirit of the South
+        </h1>
+        <button className={styles.button} aria-label="See gig dates" onClick={handleScrollToEvents}>
+          See Gig Dates
+        </button>
+      </div>
     </section>
   );
 };

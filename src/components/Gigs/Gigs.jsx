@@ -6,8 +6,8 @@ import { useModal } from '../../context/ModalContext';
 // The static array of gigs
 const gigs = [
   { date: '2024-05-05', venue: 'The Jazz Cafe', city: 'Tupelo, MS' },
-  { date: '2024-05-12', venue: 'Blues Bar', city: 'Memphis, TN' },
-  { date: '2024-05-20', venue: 'Downtown Club', city: 'Destin, FL' },
+  { date: '2024-06-12', venue: 'Blues Bar', city: 'Memphis, TN' },
+  { date: '2024-07-20', venue: 'Downtown Club', city: 'Destin, FL' },
   // ... more gigs
 ];
 

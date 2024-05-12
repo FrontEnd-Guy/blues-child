@@ -67,6 +67,10 @@
 }
 
 @media (max-width: 480px) {
+  .galleryContainer {
+    padding-top: 4rem;
+  }
+
   .buttons {
     gap: 10px;
     margin-bottom: 2rem;
