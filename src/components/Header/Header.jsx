@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../Navbar/Navbar';
 import styles from './Header.module.css';
-
 import logo from '../../assets/logo.png';
 
 const Header = () => {
@@ -9,11 +8,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -21,10 +16,12 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`${styles.header} ${isScrolled && styles.headerScrolled}`}>
+    <header
+      className={`${styles.header} ${isScrolled ? styles.headerScrolled : ''}`}
+      aria-label="Main header">
       <div className={styles.container}>
         <div className={styles.logoContainer}>
-          <img src={logo} alt="Logo" className={styles.logo} />
+          <img src={logo} alt="Blues Child Logo" className={styles.logo} />
           <span className={styles.logoText}>Blues Child</span>
         </div>
         <Navbar />

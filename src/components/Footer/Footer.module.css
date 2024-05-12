@@ -1,26 +1,34 @@
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-end;
   padding: 20px;
-  background: #000;
   color: #fff;
-  font-size: 0.9rem;
-
-  background-image: url('../../assets//gigs.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background: url('../../assets/gigs.png') no-repeat center / cover fixed;
   width: 100%;
-  min-height: 500px;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .footerContent {
+  position: relative;
   max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
   width: 100%;
+  display: flex;
   justify-content: space-between;
+  z-index: 10;
+}
+
+.footerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.socialMedia {
+  display: flex;
+  gap: 20px;
 }
 
 .logoText {
@@ -29,19 +37,53 @@
   font-weight: 400;
 }
 
-.section {
+.contact, .copyRight {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-.link:last-child {
-  margin-right: 0;
 }
 
 .copyRight {
   align-items: flex-end;
   text-align: right;
   font-size: 0.8rem;
-  min-width: 300px;
+}
+
+svg {
+  fill: #fff;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+a:hover svg {
+  transform: scale(1.1);
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footerInfo {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyRight {
+    align-items: center;
+    text-align: center;
+    border-top: 2px solid white;
+    padding-top: 10px;
+  }
 }

@@ -7,13 +7,7 @@
 body {
   background: black;
   color: #D4D4D8;
-  margin: 0;
   font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -25,7 +19,6 @@ button {
   border-radius: 4px;
   color: white;
   padding: 10px 20px;
-  margin: 0;
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
@@ -35,43 +28,57 @@ button:hover {
   background-color: white;
 }
 
-h1 {
+h1, h2, h3 {
   font-family: "Fugaz One", sans-serif;
   font-weight: 400;
-  font-style: normal;
   color: white;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
 }
 
 h2 {
-  font-family: "Fugaz One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  margin: 0;
-  margin-bottom: 1rem;
-  padding: 0;
-  font-size: 2.7rem;
-  color: white;
+  font-size: 1.75rem;
 }
 
 h3 {
-  font-family: "Fugaz One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  margin: 0;
-  padding: 0;
-  font-size: 30px;
-  color: white;
+  font-size: 1.2rem;
 }
 
-p {
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
-  line-height: 1.6;
-}
-
-ul {
+p, ul {
   list-style: none;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.7rem;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  p, ul {
+    font-size: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 4rem;
+  }
 }

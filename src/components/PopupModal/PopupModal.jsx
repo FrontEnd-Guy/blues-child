@@ -75,7 +75,9 @@ function PopupModal() {
                   required
                 />
               </label>
-              <button type="submit">Submit</button>
+              <button className={styles.submitBtn} type="submit">
+                Submit
+              </button>
             </form>
           )}
           {status === 'error' && <p>Error: Please check your input.</p>}

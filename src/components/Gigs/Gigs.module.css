@@ -1,5 +1,5 @@
 .gigs {
-  padding: 6rem 0;
+  padding: 6rem 0 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -11,4 +11,36 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  gap: 1rem;
+}
+
+.bookBtn {
+  margin-top: 2rem;
+  font-size: 1.75rem;
+  padding: 1.25rem 2.5rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .bookBtn {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gigs {
+    padding: 4rem 1rem;
+  }
+
+  .bookBtn {
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bookBtn {  
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
 }

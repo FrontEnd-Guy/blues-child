@@ -49,6 +49,13 @@
   cursor: pointer;
 }
 
+.input::placeholder,
+.textarea::placeholder {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  color: #888;
+}
+
 .input,
 .textarea {
   width: 100%;
@@ -56,13 +63,17 @@
   border: none;
   border-radius: 7px;
   outline: none;
-
   font-size: 20px;
   line-height: 1.6;
+  font-family: 'Open Sans', sans-serif;
 }
 
-textarea {
+.textarea {
   height: 170px;
+}
+
+.submitBtn {
+  margin-top: 1.5rem;
 }
 
 .successNotice {

@@ -1,6 +1,7 @@
 import React from 'react';
 import GigItem from '../GigItem/GigItem';
 import styles from './Gigs.module.css';
+import { useModal } from '../../context/ModalContext';
 
 // The static array of gigs
 const gigs = [
@@ -11,14 +12,16 @@ const gigs = [
 ];
 
 const Gigs = () => {
+  const { showModal } = useModal();
+
   return (
-    <section id="events" className={styles.gigs}>
-      <h2>Upcoming Gigs</h2>
+    <section id="events" className={styles.gigs} aria-labelledby="upcoming-gigs">
+      <h2 id="upcoming-gigs">Upcoming Gigs</h2>
       {gigs.length ? (
         <ul className={styles.container}>
-          {gigs.map((gig, index) => (
+          {gigs.map((gig) => (
             <GigItem
-              key={index}
+              key={`${gig.venue}-${gig.date}`} // Using a combination of venue and date as key
               date={new Date(gig.date)}
               eventName={gig.venue}
               location={gig.city}
@@ -28,6 +31,9 @@ const Gigs = () => {
       ) : (
         <p>No upcoming gigs scheduled.</p>
       )}
+      <button className={styles.bookBtn} onClick={showModal} aria-label="Book a session">
+        Book the Band
+      </button>
     </section>
   );
 };
