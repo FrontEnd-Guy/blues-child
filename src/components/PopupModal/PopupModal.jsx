@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useModal } from '../../context/ModalContext';
 import styles from './PopupModal.module.css';
 
@@ -6,8 +6,24 @@ function PopupModal() {
   const { hideModal } = useModal();
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('');
+  const firstInputRef = useRef(null);
 
   const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
+
+  useEffect(() => {
+    const handleKeyUp = (event) => {
+      if (event.key === 'Escape') {
+        hideModal();
+      }
+    };
+
+    document.addEventListener('keyup', handleKeyUp);
+    firstInputRef.current.focus(); // Focus the first input on modal open
+
+    return () => {
+      document.removeEventListener('keyup', handleKeyUp);
+    };
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,9 +47,18 @@ function PopupModal() {
 
   return (
     <>
-      <div id="modalOverlay" onClick={handleOverlayClick} className={styles.overlay}>
+      <div
+        id="modalOverlay"
+        onClick={handleOverlayClick}
+        className={styles.overlay}
+        aria-modal="true"
+        role="dialog">
         <div className={styles.popup}>
-          <div onClick={hideModal} className={styles.closeIcon}>
+          <div
+            onClick={hideModal}
+            className={styles.closeIcon}
+            role="button"
+            aria-label="Close modal">
             ✖️
           </div>
           {status === 'success' ? (
@@ -49,6 +74,7 @@ function PopupModal() {
                   placeholder="Your Name"
                   type="text"
                   name="name"
+                  ref={firstInputRef}
                   value={form.name}
                   onChange={handleChange}
                   required

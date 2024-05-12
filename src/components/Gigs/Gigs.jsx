@@ -21,7 +21,7 @@ const Gigs = () => {
         <ul className={styles.container}>
           {gigs.map((gig) => (
             <GigItem
-              key={`${gig.venue}-${gig.date}`} // Using a combination of venue and date as key
+              key={`${gig.venue}-${gig.date}`}
               date={new Date(gig.date)}
               eventName={gig.venue}
               location={gig.city}

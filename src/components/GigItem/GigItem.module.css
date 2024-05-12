@@ -12,7 +12,6 @@
 
 .gigDate,
 .gigDetails {
-  margin-right: 15px;
   align-self: center;
 }
 
@@ -52,4 +51,29 @@
 
 .gigLocation {
   margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .gigItem {
+    align-items: center;
+    padding: 10px;
+  }
+
+  .day, .date, .month {
+    font-size: 1em;
+  }
+
+  .gigDetails {
+    width: 100%;
+  }
+
+  .gigTitle, .gigLocation {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .day, .date, .month {
+    font-size: 0.9em;
+  }
 }

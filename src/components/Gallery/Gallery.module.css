@@ -14,7 +14,6 @@
   justify-content: center;
   align-items: center;
 }
-
 .button {
   font-size: 1.5rem;
   padding: 0.8rem 1.5rem;
@@ -26,11 +25,6 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-}
-
-.button svg {
-  fill: currentColor; 
-  transition: fill 0.3s;
 }
 
 .button:hover, .button:focus, .button:active {
@@ -53,6 +47,7 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
+  margin: 0;
 }
 
 .photo, .video {
@@ -71,14 +66,24 @@
   object-fit: cover;
 }
 
-@media (min-width: 768px) {
-  .photos, .videos {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+@media (max-width: 480px) {
+  .buttons {
+    gap: 10px;
+    margin-bottom: 2rem;
   }
-}
+  
+  .button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .button svg {
+    width: 18px;
+    height: 18px;
+  }
 
-@media (min-width: 1200px) {
   .photos, .videos {
-    grid-template-columns: repeat(4, 1fr);
+    padding-left: 0;
+    padding-right: 0;
   }
 }

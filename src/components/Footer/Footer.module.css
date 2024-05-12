@@ -74,11 +74,6 @@ h4 {
     flex-direction: column;
     gap: 20px;
   }
-  .footerInfo {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
 
   .copyRight {
     align-items: center;
