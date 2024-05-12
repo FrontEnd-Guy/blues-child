@@ -42,7 +42,7 @@ const Gallery = ({ photos, videos }) => {
         <ul className={styles.videos}>
           {videos.map((video, index) => (
             <li key={index} className={styles.video}>
-              <video controls>
+              <video controls poster={video.thumbnail}>
                 <source src={video.url} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
