@@ -13,14 +13,14 @@ const Gallery = ({ photos, videos }) => {
       </div>
       <div className={styles.buttons}>
         <button
-          aria-selected={activeTab === 'photos'}
+          ariaSelected={activeTab === 'photos'}
           onClick={() => setActiveTab('photos')}
           className={`${styles.button} ${activeTab === 'photos' ? styles.active : ''}`}>
           <PhotoIcon />
           Photos
         </button>
         <button
-          aria-selected={activeTab === 'videos'}
+          ariaSelected={activeTab === 'videos'}
           onClick={() => setActiveTab('videos')}
           className={`${styles.button} ${activeTab === 'videos' ? styles.active : ''}`}>
           <VideoIcon />

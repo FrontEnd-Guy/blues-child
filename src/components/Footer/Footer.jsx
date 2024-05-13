@@ -15,13 +15,25 @@ const Footer = () => {
             <p>Phone: +123 456 7890</p>
           </div>
           <div className={styles.socialMedia}>
-            <a href="https://www.youtube.com" aria-label="Visit our YouTube">
+            <a
+              href="https://www.youtube.com"
+              aria-label="Visit our YouTube"
+              target="_blank"
+              rel="noreferrer">
               <YoutubeIcon />
             </a>
-            <a href="https://www.instagram.com" aria-label="Visit our Instagram">
+            <a
+              href="https://www.instagram.com"
+              aria-label="Visit our Instagram"
+              target="_blank"
+              rel="noreferrer">
               <InstagramIcon />
             </a>
-            <a href="https://www.facebook.com" aria-label="Visit our Facebook">
+            <a
+              href="https://www.facebook.com"
+              aria-label="Visit our Facebook"
+              target="_blank"
+              rel="noreferrer">
               <FacebookIcon />
             </a>
           </div>

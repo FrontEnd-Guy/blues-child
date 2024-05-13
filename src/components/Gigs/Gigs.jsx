@@ -1,18 +1,27 @@
-import React from 'react';
-import GigItem from '../GigItem/GigItem';
-import styles from './Gigs.module.css';
+import React, { useState, useEffect } from 'react';
+import client from '../../client';
 import { useModal } from '../../context/ModalContext';
+import GigItem from '../GigItem/GigItem';
 
-// The static array of gigs
-const gigs = [
-  { date: '2024-05-05', venue: 'The Jazz Cafe', city: 'Tupelo, MS' },
-  { date: '2024-06-12', venue: 'Blues Bar', city: 'Memphis, TN' },
-  { date: '2024-07-20', venue: 'Downtown Club', city: 'Destin, FL' },
-  // ... more gigs
-];
+import styles from './Gigs.module.css';
 
 const Gigs = () => {
   const { showModal } = useModal();
+  const [gigs, setGigs] = useState([]);
+
+  useEffect(() => {
+    const fetchGigs = async () => {
+      const query = '*[_type == "gig"] | order(date asc)';
+      try {
+        const response = await client.fetch(query);
+        setGigs(response);
+      } catch (error) {
+        console.error('Failed to fetch gigs:', error);
+      }
+    };
+
+    fetchGigs();
+  }, []);
 
   return (
     <section id="events" className={styles.gigs} aria-labelledby="upcoming-gigs">

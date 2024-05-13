@@ -18,7 +18,7 @@ function PopupModal() {
     };
 
     document.addEventListener('keyup', handleKeyUp);
-    firstInputRef.current.focus(); // Focus the first input on modal open
+    firstInputRef.current.focus();
 
     return () => {
       document.removeEventListener('keyup', handleKeyUp);
