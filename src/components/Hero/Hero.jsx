@@ -17,8 +17,7 @@ const Hero = () => {
       </video>
       <div className={styles.contentOverlay}>
         <h1 id="hero-title" className={styles.title}>
-          Blues Child Rocks <br />
-          the Spirit of the South
+          Blues Child Rocks
         </h1>
         <button className={styles.button} aria-label="See gig dates" onClick={handleScrollToEvents}>
           See Gig Dates

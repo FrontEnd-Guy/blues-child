@@ -3,6 +3,7 @@ import styles from './Footer.module.css';
 import { ReactComponent as YoutubeIcon } from '../../assets/youtube.svg';
 import { ReactComponent as InstagramIcon } from '../../assets/instagram.svg';
 import { ReactComponent as FacebookIcon } from '../../assets/facebook.svg';
+import logo from '../../assets/logo.png';
 
 const Footer = () => {
   return (
@@ -11,8 +12,9 @@ const Footer = () => {
         <div className={styles.footerInfo}>
           <div className={styles.contact}>
             <h4>Contact Us</h4>
-            <p>Email: info@blueschildrocks.com</p>
-            <p>Phone: +123 456 7890</p>
+            <p>Email: oliviasings@yahoo.com</p>
+            <p>Text: 662 213 3430</p>
+            <p>or 662 372 5100</p>
           </div>
           <div className={styles.socialMedia}>
             <a
@@ -40,6 +42,7 @@ const Footer = () => {
         </div>
 
         <div className={styles.copyRight}>
+          <img className={styles.footerLogo} src={logo} alt="logo" />
           <p className={styles.logoText}>Blues Child</p>
           <p>&copy; {new Date().getFullYear()} All Rights Reserved.</p>
         </div>
