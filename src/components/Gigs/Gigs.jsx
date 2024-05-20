@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import client from '../../client';
 import { useModal } from '../../context/ModalContext';
 import GigItem from '../GigItem/GigItem';
+import moment from 'moment';
 
 import styles from './Gigs.module.css';
 
@@ -14,6 +15,11 @@ const Gigs = () => {
       const query = '*[_type == "gig"] | order(date asc)';
       try {
         const response = await client.fetch(query);
+        console.log('Fetched gigs:', response);
+        response.forEach((gig) => {
+          console.log('Gig date:', gig.date);
+          console.log('Formatted date:', moment(gig.date).format('YYYY-MM-DD'));
+        });
         setGigs(response);
       } catch (error) {
         console.error('Failed to fetch gigs:', error);
@@ -31,7 +37,7 @@ const Gigs = () => {
           {gigs.map((gig) => (
             <GigItem
               key={`${gig.venue}-${gig.date}`}
-              date={new Date(gig.date)}
+              date={moment(gig.date).format('YYYY-MM-DD')}
               eventName={gig.venue}
               location={gig.city}
             />

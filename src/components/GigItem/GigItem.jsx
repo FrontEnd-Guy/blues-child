@@ -1,11 +1,15 @@
 import React from 'react';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import styles from './GigItem.module.css';
 
 const GigItem = ({ date, eventName, location }) => {
-  const formattedDay = format(date, 'eee');
-  const formattedDate = format(date, 'dd');
-  const formattedMonthYear = format(date, 'MMM yyyy');
+  // Преобразование строки даты в объект Date
+  const parsedDate = parseISO(date);
+
+  // Форматирование даты с помощью date-fns
+  const formattedDay = format(parsedDate, 'eee');
+  const formattedDate = format(parsedDate, 'dd');
+  const formattedMonthYear = format(parsedDate, 'MMM yyyy');
 
   return (
     <div className={styles.gigItem}>
