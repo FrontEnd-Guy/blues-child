@@ -3,10 +3,7 @@ import { format, parseISO } from 'date-fns';
 import styles from './GigItem.module.css';
 
 const GigItem = ({ date, eventName, location }) => {
-  // Преобразование строки даты в объект Date
   const parsedDate = parseISO(date);
-
-  // Форматирование даты с помощью date-fns
   const formattedDay = format(parsedDate, 'eee');
   const formattedDate = format(parsedDate, 'dd');
   const formattedMonthYear = format(parsedDate, 'MMM yyyy');

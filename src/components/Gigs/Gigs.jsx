@@ -16,10 +16,6 @@ const Gigs = () => {
       try {
         const response = await client.fetch(query);
         console.log('Fetched gigs:', response);
-        response.forEach((gig) => {
-          console.log('Gig date:', gig.date);
-          console.log('Formatted date:', moment(gig.date).format('YYYY-MM-DD'));
-        });
         setGigs(response);
       } catch (error) {
         console.error('Failed to fetch gigs:', error);
