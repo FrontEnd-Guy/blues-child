@@ -1,52 +1,58 @@
-.galleryContainer {
-  padding: 6rem 0;
-  text-align: center;
-}
+  .galleryContainer {
+    padding: 4rem 0 0;
+    text-align: center;
+  }
 
-.header {
-  margin-bottom: 2rem;
-}
+  .header {
+    margin-bottom: 2rem;
+  }
 
-.buttons {
-  margin-bottom: 4rem;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-}
-.button {
-  font-size: 1.5rem;
-  padding: 0.8rem 1.5rem;
-  font-weight: 700;
-  cursor: pointer;
-  background: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+  }
+  .button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    background: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .button:hover, .button:focus, .button:active {
+    background-color: #e0e0e0;
+    color: black;
+    border-color: black;
+  }
 
-.button:hover, .button:focus, .button:active {
-  background-color: #e0e0e0;
-  color: black;
-  border-color: black;
+.button svg {
+  width: 18px;
+  height: 18px;
 }
-
-.button:hover svg, .button:focus svg, .button:active svg, .button.active svg {
-  fill: black;
-}
-
-.active {
-  background-color: white;
-  color: black;
-}
+  
+  .button:hover svg, .button:focus svg, .button:active svg, .button.active svg {
+    fill: black;
+  }
+  
+  .active {
+    background-color: white;
+    color: black;
+  }
 
 .photos, .videos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin: 0;
 }
 
@@ -66,28 +72,40 @@
   object-fit: cover;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 480px) {
   .galleryContainer {
-    padding-top: 4rem;
+    padding-top: 6rem;
   }
 
   .buttons {
-    gap: 10px;
-    margin-bottom: 2rem;
+    gap: 20px;
+    margin-bottom: 4rem;
   }
   
   .button {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    padding: 0.8rem 1.5rem;
   }
   
   .button svg {
-    width: 18px;
-    height: 18px;
+    width: 36px;
+    height: 36px;
   }
 
   .photos, .videos {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .photos, .videos {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .photos, .videos {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

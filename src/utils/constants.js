@@ -16,8 +16,8 @@ import video2 from '../assets/2.mp4';
 export const links = [
   { path: '#hero', name: 'Home' },
   { path: '#about', name: 'About' },
-  { path: '#events', name: 'Gigs' },
-  { path: '#gallery', name: 'Gallery' }
+  { path: '#gallery', name: 'Gallery' },
+  { path: '#events', name: 'Gigs' }
 ];
 
 export const photos = [

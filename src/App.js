@@ -6,12 +6,12 @@ import Gigs from './components/Gigs/Gigs';
 import Footer from './components/Footer/Footer';
 import About from './components/About/About';
 import Gallery from './components/Gallery/Gallery';
+import PopupModal from './components/PopupModal/PopupModal';
 
 import { useModal } from './context/ModalContext';
 
 import {photos} from './utils/constants';
 import {videos} from './utils/constants';
-import PopupModal from './components/PopupModal/PopupModal';
 
 function App() {
   const { isOpen } = useModal();
@@ -21,8 +21,8 @@ function App() {
       <Header />
       <Hero />
       <About />
-      <Gigs />
       <Gallery photos={photos} videos={videos}/>
+      <Gigs />
       <Footer />
       {isOpen && (<PopupModal/>)}
     </div>
