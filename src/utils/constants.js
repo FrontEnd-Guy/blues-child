@@ -37,9 +37,5 @@ export const photos = [
 
 export const videos = [
   { url: video1, description: 'description 1' },
-  { url: video2, description: 'description 2' },
-  { url: video1, description: 'description 1' },
-  { url: video2, description: 'description 2' },  
-  { url: video1, description: 'description 1' },
   { url: video2, description: 'description 2' }
 ]

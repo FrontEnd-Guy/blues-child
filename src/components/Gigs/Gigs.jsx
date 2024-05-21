@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import client from '../../client';
 import { useModal } from '../../context/ModalContext';
 import GigItem from '../GigItem/GigItem';
-import moment from 'moment';
-
 import styles from './Gigs.module.css';
 
 const Gigs = () => {
@@ -32,8 +30,8 @@ const Gigs = () => {
         <ul className={styles.container}>
           {gigs.map((gig) => (
             <GigItem
-              key={`${gig.venue}-${gig.date}`}
-              date={moment(gig.date).format('YYYY-MM-DD')}
+              key={`${gig._id}-${gig.date}`}
+              date={gig.date}
               eventName={gig.venue}
               location={gig.city}
             />
