@@ -1,10 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from './Gallery.module.css';
 import { ReactComponent as PhotoIcon } from '../../assets/photo.svg';
 import { ReactComponent as VideoIcon } from '../../assets/video.svg';
 
 const Gallery = ({ photos, videos }) => {
   const [activeTab, setActiveTab] = useState('photos');
+  const videoRefs = useRef([]);
+
+  useEffect(() => {
+    videoRefs.current = videoRefs.current.slice(0, videos.length);
+  }, [videos]);
+
+  const handlePlay = (index) => {
+    videoRefs.current.forEach((video, i) => {
+      if (i !== index && video) {
+        video.pause();
+      }
+    });
+  };
 
   return (
     <section id="gallery" className={styles.galleryContainer} aria-labelledby="gallery-header">
@@ -42,7 +55,11 @@ const Gallery = ({ photos, videos }) => {
         <ul className={styles.videos}>
           {videos.map((video, index) => (
             <li key={index} className={styles.video}>
-              <video controls poster={video.thumbnail}>
+              <video
+                controls
+                poster={video.thumbnail}
+                ref={(el) => (videoRefs.current[index] = el)}
+                onPlay={() => handlePlay(index)}>
                 <source src={video.url} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
