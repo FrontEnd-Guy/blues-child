@@ -10,9 +10,6 @@ import PopupModal from './components/PopupModal/PopupModal';
 
 import { useModal } from './context/ModalContext';
 
-import {photos} from './utils/constants';
-import {videos} from './utils/constants';
-
 function App() {
   const { isOpen } = useModal();
 
@@ -21,7 +18,7 @@ function App() {
       <Header />
       <Hero />
       <About />
-      <Gallery photos={photos} videos={videos}/>
+      <Gallery/>
       <Gigs />
       <Footer />
       {isOpen && (<PopupModal/>)}

@@ -13,7 +13,6 @@ const Gigs = () => {
       const query = '*[_type == "gig"] | order(date asc)';
       try {
         const response = await client.fetch(query);
-        console.log('Fetched gigs:', response);
         setGigs(response);
       } catch (error) {
         console.error('Failed to fetch gigs:', error);

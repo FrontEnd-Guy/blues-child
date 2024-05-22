@@ -2,10 +2,32 @@ import React, { useState, useRef, useEffect } from 'react';
 import styles from './Gallery.module.css';
 import { ReactComponent as PhotoIcon } from '../../assets/photo.svg';
 import { ReactComponent as VideoIcon } from '../../assets/video.svg';
+import client from '../../client';
 
-const Gallery = ({ photos, videos }) => {
+const Gallery = () => {
   const [activeTab, setActiveTab] = useState('photos');
+  const [photos, setPhotos] = useState([]);
+  const [videos, setVideos] = useState([]);
   const videoRefs = useRef([]);
+
+  useEffect(() => {
+    const fetchPhotos = async () => {
+      const query =
+        '*[_type == "photo"] | order(order asc) { _id, description, "url": image.asset->url }';
+      const result = await client.fetch(query);
+      setPhotos(result);
+    };
+
+    const fetchVideos = async () => {
+      const query =
+        '*[_type == "video"] | order(order asc) { _id, description, "url": video.asset->url, "thumbnail": thumbnail.asset->url }';
+      const result = await client.fetch(query);
+      setVideos(result);
+    };
+
+    fetchPhotos();
+    fetchVideos();
+  }, []);
 
   useEffect(() => {
     videoRefs.current = videoRefs.current.slice(0, videos.length);
@@ -26,16 +48,16 @@ const Gallery = ({ photos, videos }) => {
       </div>
       <div className={styles.buttons}>
         <button
-          aria-selected={activeTab === 'photos'}
           onClick={() => setActiveTab('photos')}
-          className={`${styles.button} ${activeTab === 'photos' ? styles.active : ''}`}>
+          className={`${styles.button} ${activeTab === 'photos' ? styles.active : ''}`}
+          data-active={activeTab === 'photos'}>
           <PhotoIcon />
           Photos
         </button>
         <button
-          aria-selected={activeTab === 'videos'}
           onClick={() => setActiveTab('videos')}
-          className={`${styles.button} ${activeTab === 'videos' ? styles.active : ''}`}>
+          className={`${styles.button} ${activeTab === 'videos' ? styles.active : ''}`}
+          data-active={activeTab === 'videos'}>
           <VideoIcon />
           Videos
         </button>
@@ -43,8 +65,8 @@ const Gallery = ({ photos, videos }) => {
 
       {activeTab === 'photos' && (
         <ul className={styles.photos}>
-          {photos.map((photo, index) => (
-            <li key={index} className={styles.photo}>
+          {photos.map((photo) => (
+            <li key={photo._id} className={styles.photo}>
               <img src={photo.url} alt={photo.description || 'Gallery photo'} />
             </li>
           ))}
@@ -54,7 +76,7 @@ const Gallery = ({ photos, videos }) => {
       {activeTab === 'videos' && (
         <ul className={styles.videos}>
           {videos.map((video, index) => (
-            <li key={index} className={styles.video}>
+            <li key={video._id} className={styles.video}>
               <video
                 controls
                 poster={video.thumbnail}

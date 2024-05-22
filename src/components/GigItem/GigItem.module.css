@@ -5,11 +5,6 @@
   padding: 20px;
 }
 
-.gigItem:hover {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, .125);
-}
-
 .gigDate,
 .gigDetails {
   align-self: center;
