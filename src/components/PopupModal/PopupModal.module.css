@@ -81,6 +81,10 @@
   text-align: center;
 }
 
+.phone {
+  margin-top: 0.75rem;
+}
+
 @media (max-width: 600px) {
   .popup {
     width: 80%;

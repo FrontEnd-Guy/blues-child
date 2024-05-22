@@ -131,7 +131,7 @@ function PopupModal() {
             <button className={styles.submitBtn} type="submit">
               Submit
             </button>
-            <p>or text 662 213 3430</p>
+            <p className={styles.phone}>or text 662 213 3430</p>
           </form>
         )}
         {status === 'error' && <p>Error: {errorMessage}</p>}
