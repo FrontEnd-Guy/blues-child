@@ -13,7 +13,6 @@ const Navbar = () => {
 
   const handleKeyDown = useCallback(
     (event) => {
-      // Key handling for accessibility
       if (event.key === 'Enter' || event.key === ' ') {
         toggleMenu();
       }

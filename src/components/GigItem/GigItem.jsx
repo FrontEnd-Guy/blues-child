@@ -9,7 +9,7 @@ const GigItem = ({ date, eventName, location }) => {
   const formattedMonthYear = format(parsedDate, 'MMM yyyy');
 
   return (
-    <div className={styles.gigItem}>
+    <li className={styles.gigItem}>
       <div className={styles.gigDate}>
         <span className={styles.day}>{formattedDay}</span>
         <span className={styles.date}>{formattedDate}</span>
@@ -19,7 +19,7 @@ const GigItem = ({ date, eventName, location }) => {
         <h3 className={styles.gigTitle}>{eventName}</h3>
         <p className={styles.gigLocation}>{location}</p>
       </div>
-    </div>
+    </li>
   );
 };
 

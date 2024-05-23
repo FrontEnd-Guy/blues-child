@@ -44,6 +44,18 @@
   align-items: flex-start;
 }
 
+.contact a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+}
+
 .copyRight {
   align-items: flex-end;
   text-align: right;

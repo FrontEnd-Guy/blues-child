@@ -12,9 +12,15 @@ const Footer = () => {
         <div className={styles.footerInfo}>
           <div className={styles.contact}>
             <h4>Contact Us</h4>
-            <p>Email: oliviasings@yahoo.com</p>
-            <p>Text: 662 213 3430</p>
-            <p>or 662 372 5100</p>
+            <p>
+              Email: <a href="mailto:oliviasings@yahoo.com">oliviasings@yahoo.com</a>
+            </p>
+            <p>
+              Text: <a href="sms:+16622133430">662 213 3430</a>
+            </p>
+            <p>
+              or <a href="sms:+16623725100">662 372 5100</a>
+            </p>
           </div>
           <div className={styles.socialMedia}>
             <a

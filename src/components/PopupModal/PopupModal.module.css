@@ -73,7 +73,7 @@
 }
 
 .submitBtn {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .successNotice {
@@ -82,13 +82,25 @@
 }
 
 .phone {
-  margin-top: 0.75rem;
+  margin-top: 1rem;
+}
+
+.phone a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.phone a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
 }
 
 @media (max-width: 600px) {
   .popup {
     width: 80%;
-    padding: 20px 10px; /* Reduce padding */
+    padding: 20px 10px;
   }
 
   .input, .textarea {
