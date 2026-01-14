@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import client from '../../client';
+import { writeClient } from '../../client';
 import { useModal } from '../../context/ModalContext';
 import styles from './PopupModal.module.css';
 
@@ -47,7 +47,7 @@ function PopupModal() {
     }
 
     try {
-      await client.create({
+      await writeClient.create({
         _type: 'booking',
         name: form.name,
         email: form.email,

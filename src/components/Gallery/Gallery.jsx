@@ -12,17 +12,25 @@ const Gallery = () => {
 
   useEffect(() => {
     const fetchPhotos = async () => {
-      const query =
-        '*[_type == "photo"] | order(order asc) { _id, description, "url": image.asset->url }';
-      const result = await client.fetch(query);
-      setPhotos(result);
+      try {
+        const query =
+          '*[_type == "photo"] | order(order asc) { _id, description, "url": image.asset->url }';
+        const result = await client.fetch(query);
+        setPhotos(result);
+      } catch (error) {
+        console.error('Failed to fetch photos:', error);
+      }
     };
 
     const fetchVideos = async () => {
-      const query =
-        '*[_type == "video"] | order(order asc) { _id, description, "url": video.asset->url, "thumbnail": thumbnail.asset->url }';
-      const result = await client.fetch(query);
-      setVideos(result);
+      try {
+        const query =
+          '*[_type == "video"] | order(order asc) { _id, description, "url": video.asset->url, "thumbnail": thumbnail.asset->url }';
+        const result = await client.fetch(query);
+        setVideos(result);
+      } catch (error) {
+        console.error('Failed to fetch videos:', error);
+      }
     };
 
     fetchPhotos();

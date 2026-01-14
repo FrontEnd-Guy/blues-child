@@ -3,6 +3,10 @@ import { format, parseISO } from 'date-fns';
 import styles from './GigItem.module.css';
 
 const GigItem = ({ date, eventName, location }) => {
+  if (!date) {
+    return null;
+  }
+
   const parsedDate = parseISO(date);
   const formattedDay = format(parsedDate, 'eee');
   const formattedDate = format(parsedDate, 'dd');
